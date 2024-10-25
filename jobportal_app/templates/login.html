@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Login User 
+{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/error_msg.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class=" textmsg container">
+    {{error}}
+</div>
+<br>
+<div class="box container">  
+    <h1> Please login</h1>
+    <form method="POST" action="{% url 'loginUser' %}" autocomplete="off" >
+        {% csrf_token %}
+        <label for="username"> Username: </label>
+        <input type="text" name="username" id="username"><br><br>
+    
+        <label for="userpassword"> Password: </label>
+        <input type="password" name="userpassword" id="userpassword">
+    
+        <button type="submit"> Login </button>
+    </form>
+</div>
+
+
+{% endblock %}

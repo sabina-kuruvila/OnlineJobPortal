@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{{company.name}}
+{% endblock %}
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+{% endblock %}
+{% block nav-section %}
+<a class="btn  btn-sm btn-secondary" href="{% url 'home' %}" role="button">Go Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="box container">
+    <h1>Application Form</h1>
+    <form method='POST' enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            {{form.as_p}}
+
+            <!-- Display company name as text -->
+            <!-- <p>Company: {{ company.name }}</p> -->
+
+        </div>
+
+        <!-- Button for submitting the entire form -->
+        <button type="submit" class="btn btn-lg btn-primary"> Submit</button>
+    </form>
+
+</div>
+
+{% endblock %}

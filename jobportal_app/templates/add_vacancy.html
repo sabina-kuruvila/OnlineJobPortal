@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Add vacancy
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% endblock %}
+
+{% block nav-section %}
+<a class="btn btn-primary" href="{% url 'logoutUser' %}" role="button">Log out</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="box container">
+    <h1> Add New Vacany</h1>
+    
+    <form method="POST">
+
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Add Vacancy</button>
+
+    </form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Update vacancy
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% endblock %}
+
+{% block nav-section %}
+<a class="btn  btn-sm btn-secondary" href="javascript:history.back()" role="button">Go Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="box container">
+    <h1> Update Vacany</h1>
+    
+    <form method="POST">
+
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit"> Update Vacancy </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

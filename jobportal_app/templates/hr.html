@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+    Applied Candidates 
+{% endblock %}
+
+{% block content %}
+<style>
+    .textmsg{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 30px;
+        text-align: center;
+        background-color: rgb(191, 54, 54);
+    }
+</style>
+<div class=" textmsg container">
+    {{error}}
+</div>
+
+<div class="container card">
+    <div class="card-header">
+        <h1> {{message}} </h1>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover">
+            <tr style="text-align: center;">
+                <th> Name</th>
+                <th> DOB</th>
+                <th> Resume</th>
+                <th> Gender</th>
+                <th> Mobile</th>
+                <th> Email</th>
+            </tr>
+            {% for c in candidates %}
+            <tr>
+                <td> {{c.name}}</td>
+                <td> {{c.DOB}}</td>
+                <td> <a href="{{c.resume.url}}" target="_blank">{{c.resume}}</a></td>
+                <td> {{c.gender}}</td>
+                <td> {{c.mobile}}</td>
+                <td> {{c.email}}</td>
+                <!-- {% for companies in c.company.all %}
+                <td> {{companies.name}} {% if not forloop.last %},{% endif %}</td>
+                {% endfor %} -->
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+{% endblock %}

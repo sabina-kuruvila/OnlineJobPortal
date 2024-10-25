@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Register User
+{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="box container">
+    <h1> Please Register</h1>
+    <form method='POST' action="" enctype="multipart/form-data" action="{% url 'register' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            {{form.as_p}}    
+        </div>
+        
+        <!-- Button for submitting the entire form -->
+        <button type="submit" class="btn btn-lg btn-primary"> Submit</button>
+    </form>
+</div>
+
+
+{% endblock %}

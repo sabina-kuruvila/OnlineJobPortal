@@ -1,0 +1,57 @@
+/* Main container styling */
+.msg-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height to center vertically */
+    padding: 20px;
+    background-color: #2f9fb0; /* Light teal background */
+}
+
+/* Message styling */
+.message-box {
+    color: rgb(128, 12, 89);
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    text-decoration: underline; /* Underlines the text */
+    text-decoration-color:black;
+    
+}
+
+.box {
+    padding: 20px;
+    border: 2px solid rgb(10, 21, 110);
+    background-color: aquamarine;
+    
+}
+/* form {
+    display: flex;
+    flex-direction: column;    /* Align form fields vertically */
+    /* align-items: center;       /* Center the form elements horizontally */
+/* }  */
+
+
+.form-group label {
+    margin: 5px;
+    padding: 5px;
+}
+
+/* Style for input fields inside form-group */
+.form-group input {
+    width: 20%; /* Ensures input fields fill 20% of the container */
+    padding: 5px; /* Adds padding inside input fields for better readability */
+    margin: 5px 5px 15px; /* Adds space around input fields, especially 15px at the bottom */
+}
+
+/* Styling for the h1 header */
+h1 {
+    color: blue; /* Sets the text color to blue */
+    text-align: center; /* Centers the text */
+    margin: 0;                 /* Remove any default margin */
+    padding-bottom: 20px;      /* Space between the heading and the form */
+    text-decoration: underline; /* Underlines the text */
+    text-decoration-color:blueviolet; /* Sets the underline color to brown */
+}
